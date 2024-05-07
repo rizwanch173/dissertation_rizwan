@@ -12,7 +12,7 @@ app = Flask(__name__)
 # app.config['SECRET_KEY'] = random.randint(32)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 # db.init_app(app)
-
+#
 
 @app.route("/")
 def index():
