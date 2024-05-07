@@ -1,6 +1,5 @@
 from flask import Flask, redirect, url_for, request
 from flask import render_template
-import tensorflow_hub as hub
 from flask_sqlalchemy import SQLAlchemy
 import random
 import tensorflow as tf
