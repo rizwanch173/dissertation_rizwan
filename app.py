@@ -35,7 +35,7 @@ def predict():
         return render_template("index.html")
 
 @app.route("/api/predict", methods=['GET', 'POST'])
-def predict():
+def api_predict():
     if request.method == "POST":
         form_data = request.form
         essay = form_data.get('essay')
