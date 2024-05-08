@@ -7,4 +7,4 @@ MarkupSafe==1.1.1
 Werkzeug==1.0.1
 tensorflow==2.13.0
 tensorflow-text==2.13.0
-SQLAlchemy
+flask_sqlalchemy
