@@ -2,8 +2,8 @@ from flask import Flask, redirect, url_for, request
 from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 import random
-# import tensorflow as tf
-# loaded_model = tf.saved_model.load("trainedmodel")
+import tensorflow as tf
+loaded_model = tf.saved_model.load("model")
 
 # db = SQLAlchemy()
 
