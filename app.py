@@ -20,17 +20,34 @@ def index():
 
 @app.route("/predict", methods=['GET', 'POST'])
 def predict():
-    form_data = request.form
-    essay = form_data.get('essay')
-    new_essay = [essay]
+    if request.method == "POST":
+        form_data = request.form
+        essay = form_data.get('essay')
+        new_essay = [essay]
 
-    # predicted_grade = model.predict([new_essay])
-    # print(f"The predicted grade for the new essay is: {predicted_grade[0]}")
-    outpit = loaded_model(new_essay)
+        # predicted_grade = model.predict([new_essay])
+        # print(f"The predicted grade for the new essay is: {predicted_grade[0]}")
+        # outpit = loaded_model(new_essay)
 
-    print(f"The predicted grade for the new essay is: {outpit[0]}")
-    print(essay)
-    return render_template("index.html", score=8)
+        print(essay)
+        return render_template("index.html", score=8)
+    else:
+        return render_template("index.html")
+
+@app.route("/api/predict", methods=['GET', 'POST'])
+def predict():
+    if request.method == "POST":
+        form_data = request.form
+        essay = form_data.get('essay')
+        new_essay = [essay]
+
+        # predicted_grade = model.predict([new_essay])
+        # print(f"The predicted grade for the new essay is: {predicted_grade[0]}")
+        # outpit = loaded_model(new_essay)
+        print(essay)
+        return jsonify({'score':8})
+    else:
+        return jsonify({'score':8})
 
 
 if __name__=='__main__':
