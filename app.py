@@ -3,10 +3,10 @@ from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 import random
 import tensorflow as tf
-loaded_model = tf.saved_model.load("model")
+#loaded_model = tf.saved_model.load("model")
 #
 
-# db = SQLAlchemy()
+db = SQLAlchemy()
 
 app = Flask(__name__)
 
