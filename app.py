@@ -5,7 +5,7 @@ import tensorflow_hub as hub
 import tensorflow_text
 import random
 import tensorflow as tf
-loaded_model = tf.saved_model.load("model")
+loaded_model = tf.saved_model.load("trainedmodel")
 #
 
 db = SQLAlchemy()
@@ -28,7 +28,7 @@ def predict():
         essay = form_data.get('essay')
         new_essay = [essay]
 
-        # predicted_grade = model.predict([new_essay])
+        # predicted_grade = trainedmodel.predict([new_essay])
         # print(f"The predicted grade for the new essay is: {predicted_grade[0]}")
         # outpit = loaded_model(new_essay)
 
@@ -44,7 +44,7 @@ def api_predict():
         essay = form_data.get('essay')
         new_essay = [essay]
 
-        # predicted_grade = model.predict([new_essay])
+        # predicted_grade = trainedmodel.predict([new_essay])
         # print(f"The predicted grade for the new essay is: {predicted_grade[0]}")
         # outpit = loaded_model(new_essay)
         print(essay)
