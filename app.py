@@ -23,7 +23,10 @@ def index():
 
 @app.route("/predict", methods=['GET', 'POST'])
 def predict():
-    loaded_model = tf.saved_model.load("trainedmodel")
+    #loaded_model = tf.saved_model.load("trainedmodel")
+    my_mode = tf.keras.models.load_model(
+        "trainedmodel", custom_objects=None, compile=True, safe_mode=True
+    )
     if request.method == "POST":
         form_data = request.form
         essay = form_data.get('essay')
