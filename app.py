@@ -5,10 +5,10 @@ import tensorflow_hub as hub
 import tensorflow_text
 import random
 import tensorflow as tf
-loaded_model = tf.saved_model.load("trainedmodel")
+
 #
 
-db = SQLAlchemy()
+#db = SQLAlchemy()
 
 app = Flask(__name__)
 
@@ -23,6 +23,7 @@ def index():
 
 @app.route("/predict", methods=['GET', 'POST'])
 def predict():
+    loaded_model = tf.saved_model.load("trainedmodel")
     if request.method == "POST":
         form_data = request.form
         essay = form_data.get('essay')
